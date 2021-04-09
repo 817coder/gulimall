@@ -1,17 +1,17 @@
 package com.wang.gulimall.coupon.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.wang.common.utils.PageUtils;
 import com.wang.gulimall.coupon.entity.HomeSubjectEntity;
+import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.Map;
 
 /**
  * 首页专题表【jd首页下面很多专题，每个专题链接新的页面，展示专题商品信息】
  *
- * @author wang
- * @email 1916622321@qq.com
- * @date 2020-11-02 13:04:44
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:36:40
  */
 public interface HomeSubjectService extends IService<HomeSubjectEntity> {
 

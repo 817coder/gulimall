@@ -7,9 +7,9 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * 支付信息表
  * 
- * @author wang
- * @email 1916622321@qq.com
- * @date 2020-11-02 12:56:28
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:56:16
  */
 @Mapper
 public interface PaymentInfoDao extends BaseMapper<PaymentInfoEntity> {

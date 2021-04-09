@@ -2,18 +2,18 @@ package com.wang.gulimall.order.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * 订单退货申请
  * 
- * @author wang
- * @email 1916622321@qq.com
- * @date 2020-11-02 12:56:28
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:56:16
  */
 @Data
 @TableName("oms_order_return_apply")
@@ -100,7 +100,7 @@ public class OrderReturnApplyEntity implements Serializable {
 	/**
 	 * 描述
 	 */
-	private String description;
+	private String description述;
 	/**
 	 * 凭证图片，以逗号隔开
 	 */

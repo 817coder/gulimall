@@ -1,17 +1,17 @@
 package com.wang.gulimall.order.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.wang.common.utils.PageUtils;
 import com.wang.gulimall.order.entity.OrderOperateHistoryEntity;
+import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.Map;
 
 /**
  * 订单操作历史记录
  *
- * @author wang
- * @email 1916622321@qq.com
- * @date 2020-11-02 12:56:28
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:56:16
  */
 public interface OrderOperateHistoryService extends IService<OrderOperateHistoryEntity> {
 

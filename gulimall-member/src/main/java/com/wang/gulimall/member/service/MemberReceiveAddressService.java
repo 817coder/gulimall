@@ -1,17 +1,17 @@
 package com.wang.gulimall.member.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.wang.common.utils.PageUtils;
 import com.wang.gulimall.member.entity.MemberReceiveAddressEntity;
+import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.Map;
 
 /**
  * 会员收货地址
  *
- * @author wang
- * @email 1916622321@qq.com
- * @date 2020-11-02 12:52:03
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:47:05
  */
 public interface MemberReceiveAddressService extends IService<MemberReceiveAddressEntity> {
 

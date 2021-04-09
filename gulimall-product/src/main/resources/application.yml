@@ -6,10 +6,26 @@ spring:
     url: jdbc:mysql://49.235.32.38:3306/gulimall_pms
     driver-class-name: com.mysql.jdbc.Driver
 
+  cloud:
+    nacos:
+      config:
+        server-addr: 49.235.32.38:8848
+
+      discovery:
+        server-addr: 49.235.32.38:8848
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
     db-config:
       id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+logging:
+  level:
+    io.niceseason.gulimall.product: debug
+
 server:
   port: 11000

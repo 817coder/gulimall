@@ -7,9 +7,9 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * spu属性值
  * 
- * @author wang
- * @email 1916622321@qq.com
- * @date 2020-11-02 10:43:35
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-01 21:08:49
  */
 @Mapper
 public interface ProductAttrValueDao extends BaseMapper<ProductAttrValueEntity> {

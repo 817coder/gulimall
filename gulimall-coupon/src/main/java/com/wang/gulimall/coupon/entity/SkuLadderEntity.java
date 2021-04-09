@@ -2,18 +2,17 @@ package com.wang.gulimall.coupon.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * 商品阶梯价格
  * 
- * @author wang
- * @email 1916622321@qq.com
- * @date 2020-11-02 13:04:43
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:36:40
  */
 @Data
 @TableName("sms_sku_ladder")

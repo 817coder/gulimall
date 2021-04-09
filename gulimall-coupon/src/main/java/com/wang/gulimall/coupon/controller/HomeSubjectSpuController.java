@@ -1,28 +1,22 @@
 package com.wang.gulimall.coupon.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.wang.gulimall.coupon.entity.HomeSubjectSpuEntity;
-import com.wang.gulimall.coupon.service.HomeSubjectSpuService;
 import com.wang.common.utils.PageUtils;
 import com.wang.common.utils.R;
+import com.wang.gulimall.coupon.entity.HomeSubjectSpuEntity;
+import com.wang.gulimall.coupon.service.HomeSubjectSpuService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.Map;
 
 
 /**
  * 专题商品
  *
- * @author wang
- * @email 1916622321@qq.com
- * @date 2020-11-02 13:04:44
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:36:40
  */
 @RestController
 @RequestMapping("coupon/homesubjectspu")
@@ -34,6 +28,7 @@ public class HomeSubjectSpuController {
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("coupon:homesubjectspu:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = homeSubjectSpuService.queryPage(params);
 
@@ -45,6 +40,7 @@ public class HomeSubjectSpuController {
      * 信息
      */
     @RequestMapping("/info/{id}")
+    //@RequiresPermissions("coupon:homesubjectspu:info")
     public R info(@PathVariable("id") Long id){
 		HomeSubjectSpuEntity homeSubjectSpu = homeSubjectSpuService.getById(id);
 
@@ -55,6 +51,7 @@ public class HomeSubjectSpuController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("coupon:homesubjectspu:save")
     public R save(@RequestBody HomeSubjectSpuEntity homeSubjectSpu){
 		homeSubjectSpuService.save(homeSubjectSpu);
 
@@ -65,6 +62,7 @@ public class HomeSubjectSpuController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("coupon:homesubjectspu:update")
     public R update(@RequestBody HomeSubjectSpuEntity homeSubjectSpu){
 		homeSubjectSpuService.updateById(homeSubjectSpu);
 
@@ -75,6 +73,7 @@ public class HomeSubjectSpuController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("coupon:homesubjectspu:delete")
     public R delete(@RequestBody Long[] ids){
 		homeSubjectSpuService.removeByIds(Arrays.asList(ids));
 

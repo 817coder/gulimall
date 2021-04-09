@@ -5,7 +5,18 @@ spring:
     password: root
     url: jdbc:mysql://49.235.32.38:3306/gulimall_oms
     driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    nacos:
+      config:
+        server-addr: 49.235.32.38:8848
 
+      discovery:
+        server-addr: 49.235.32.38:8848
+  application:
+    name: gulimall-order
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
@@ -13,4 +24,4 @@ mybatis-plus:
       id-type: auto
 
 server:
-  port: 10000
+  port: 15000

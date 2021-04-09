@@ -1,28 +1,22 @@
 package com.wang.gulimall.coupon.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.wang.gulimall.coupon.entity.SeckillSessionEntity;
-import com.wang.gulimall.coupon.service.SeckillSessionService;
 import com.wang.common.utils.PageUtils;
 import com.wang.common.utils.R;
+import com.wang.gulimall.coupon.entity.SeckillSessionEntity;
+import com.wang.gulimall.coupon.service.SeckillSessionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.Map;
 
 
 /**
  * 秒杀活动场次
  *
- * @author wang
- * @email 1916622321@qq.com
- * @date 2020-11-02 13:04:44
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:36:40
  */
 @RestController
 @RequestMapping("coupon/seckillsession")
@@ -34,6 +28,7 @@ public class SeckillSessionController {
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("coupon:seckillsession:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = seckillSessionService.queryPage(params);
 
@@ -45,6 +40,7 @@ public class SeckillSessionController {
      * 信息
      */
     @RequestMapping("/info/{id}")
+    //@RequiresPermissions("coupon:seckillsession:info")
     public R info(@PathVariable("id") Long id){
 		SeckillSessionEntity seckillSession = seckillSessionService.getById(id);
 
@@ -55,6 +51,7 @@ public class SeckillSessionController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("coupon:seckillsession:save")
     public R save(@RequestBody SeckillSessionEntity seckillSession){
 		seckillSessionService.save(seckillSession);
 
@@ -65,6 +62,7 @@ public class SeckillSessionController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("coupon:seckillsession:update")
     public R update(@RequestBody SeckillSessionEntity seckillSession){
 		seckillSessionService.updateById(seckillSession);
 
@@ -75,6 +73,7 @@ public class SeckillSessionController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("coupon:seckillsession:delete")
     public R delete(@RequestBody Long[] ids){
 		seckillSessionService.removeByIds(Arrays.asList(ids));
 

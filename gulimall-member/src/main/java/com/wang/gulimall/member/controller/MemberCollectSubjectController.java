@@ -1,28 +1,22 @@
 package com.wang.gulimall.member.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.wang.gulimall.member.entity.MemberCollectSubjectEntity;
-import com.wang.gulimall.member.service.MemberCollectSubjectService;
 import com.wang.common.utils.PageUtils;
 import com.wang.common.utils.R;
+import com.wang.gulimall.member.entity.MemberCollectSubjectEntity;
+import com.wang.gulimall.member.service.MemberCollectSubjectService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.Map;
 
 
 /**
  * 会员收藏的专题活动
  *
- * @author wang
- * @email 1916622321@qq.com
- * @date 2020-11-02 12:52:03
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-08 09:47:05
  */
 @RestController
 @RequestMapping("member/membercollectsubject")
@@ -34,6 +28,7 @@ public class MemberCollectSubjectController {
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("member:membercollectsubject:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = memberCollectSubjectService.queryPage(params);
 
@@ -45,6 +40,7 @@ public class MemberCollectSubjectController {
      * 信息
      */
     @RequestMapping("/info/{id}")
+    //@RequiresPermissions("member:membercollectsubject:info")
     public R info(@PathVariable("id") Long id){
 		MemberCollectSubjectEntity memberCollectSubject = memberCollectSubjectService.getById(id);
 
@@ -55,6 +51,7 @@ public class MemberCollectSubjectController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("member:membercollectsubject:save")
     public R save(@RequestBody MemberCollectSubjectEntity memberCollectSubject){
 		memberCollectSubjectService.save(memberCollectSubject);
 
@@ -65,6 +62,7 @@ public class MemberCollectSubjectController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("member:membercollectsubject:update")
     public R update(@RequestBody MemberCollectSubjectEntity memberCollectSubject){
 		memberCollectSubjectService.updateById(memberCollectSubject);
 
@@ -75,6 +73,7 @@ public class MemberCollectSubjectController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("member:membercollectsubject:delete")
     public R delete(@RequestBody Long[] ids){
 		memberCollectSubjectService.removeByIds(Arrays.asList(ids));
 

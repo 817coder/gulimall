@@ -1,28 +1,22 @@
 package com.wang.gulimall.product.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.wang.gulimall.product.entity.SpuImagesEntity;
-import com.wang.gulimall.product.service.SpuImagesService;
 import com.wang.common.utils.PageUtils;
 import com.wang.common.utils.R;
+import com.wang.gulimall.product.entity.SpuImagesEntity;
+import com.wang.gulimall.product.service.SpuImagesService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.Map;
 
 
 /**
  * spu图片
  *
- * @author wang
- * @email 1916622321@qq.com
- * @date 2020-11-02 10:43:35
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-01 22:50:32
  */
 @RestController
 @RequestMapping("product/spuimages")
@@ -34,6 +28,7 @@ public class SpuImagesController {
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("product:spuimages:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = spuImagesService.queryPage(params);
 
@@ -45,6 +40,7 @@ public class SpuImagesController {
      * 信息
      */
     @RequestMapping("/info/{id}")
+    //@RequiresPermissions("product:spuimages:info")
     public R info(@PathVariable("id") Long id){
 		SpuImagesEntity spuImages = spuImagesService.getById(id);
 
@@ -55,6 +51,7 @@ public class SpuImagesController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("product:spuimages:save")
     public R save(@RequestBody SpuImagesEntity spuImages){
 		spuImagesService.save(spuImages);
 
@@ -65,6 +62,7 @@ public class SpuImagesController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("product:spuimages:update")
     public R update(@RequestBody SpuImagesEntity spuImages){
 		spuImagesService.updateById(spuImages);
 
@@ -75,6 +73,7 @@ public class SpuImagesController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("product:spuimages:delete")
     public R delete(@RequestBody Long[] ids){
 		spuImagesService.removeByIds(Arrays.asList(ids));
 

@@ -2,18 +2,18 @@ package com.wang.gulimall.product.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.math.BigDecimal;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * spu信息
  * 
- * @author wang
- * @email 1916622321@qq.com
- * @date 2020-11-02 10:43:35
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-01 21:08:49
  */
 @Data
 @TableName("pms_spu_info")
@@ -46,7 +46,7 @@ public class SpuInfoEntity implements Serializable {
 	 */
 	private BigDecimal weight;
 	/**
-	 * 上架状态[0 - 下架，1 - 上架]
+	 * 上架状态[0 - 新建，1 - 上架，2-下架]
 	 */
 	private Integer publishStatus;
 	/**

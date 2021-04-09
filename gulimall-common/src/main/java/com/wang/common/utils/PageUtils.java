@@ -53,7 +53,7 @@ public class PageUtils implements Serializable {
 		this.totalCount = totalCount;
 		this.pageSize = pageSize;
 		this.currPage = currPage;
-		this.totalPage = (int)Math.ceil((double)totalCount/pageSize);
+		this.totalPage = (int) Math.ceil((double)totalCount/pageSize);
 	}
 
 	/**
