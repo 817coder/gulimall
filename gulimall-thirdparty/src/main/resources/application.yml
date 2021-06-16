@@ -1,13 +1,4 @@
 spring:
-  cloud:
-    alicloud:
-      access-key: LTAI4G84nQsTXH19gTg3uAhu
-      secret-key: gotnaW0aqCS138Zxg2o05Gnvj36TkK
-      oss:
-        endpoint: oss-cn-hangzhou.aliyuncs.com
-    nacos:
-      discovery:
-        server-addr: 49.235.32.38:8848
 
   application:
     name: gulimall-thirdparty
